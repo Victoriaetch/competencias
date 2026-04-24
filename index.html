@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portafolio de Competencias — Victoria Etcheverry</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F4F1EB;
+    --card: #FFFDF9;
+    --text: #1A1916;
+    --muted: #6B6860;
+    --accent: #2A5F4F;
+    --accent-light: #E1F5EE;
+    --accent-mid: #1D9E75;
+    --amber: #BA7517;
+    --amber-light: #FAEEDA;
+    --coral: #993C1D;
+    --coral-light: #FAECE7;
+    --purple: #534AB7;
+    --purple-light: #EEEDFE;
+    --border: rgba(26,25,22,0.12);
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    min-height: 88vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    align-items: center;
+  }
+
+  .hero-text { padding-right: 4rem; }
+
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-mid);
+    background: var(--accent-light);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 420px;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover { background: #1D6B55; transform: translateY(-1px); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--text);
+    padding: 12px 24px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: border-color 0.2s;
+  }
+
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+  .hero-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 2.2rem;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+  }
+
+  .profile-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .profile-info h3 {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .profile-info p {
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  /* SECTIONS */
+  section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .section-tag {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .section-divider {
+    width: 100%;
+    height: 1px;
+    background: var(--border);
+    margin: 0;
+  }
+
+  /* SOBRE MÍ */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  .about-text strong { color: var(--text); font-weight: 500; }
+
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .skill-tag {
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    background: var(--card);
+  }
+
+  .about-aside { display: flex; flex-direction: column; gap: 1rem; }
+
+  .info-block {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .info-block h4 {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    border-top: 1px solid var(--border);
+    font-size: 0.9rem;
+  }
+
+  .info-row:first-of-type { border-top: none; }
+
+  .info-label { color: var(--muted); min-width: 80px; font-size: 0.82rem; }
+  .info-value { color: var(--text); font-weight: 400; }
+
+  .lang-bar-wrap { margin-top: 0.25rem; }
+
+  .lang-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.4rem 0;
+    font-size: 0.88rem;
+  }
+
+  .lang-name { min-width: 80px; color: var(--text); }
+  .lang-level { color: var(--muted); font-size: 0.8rem; min-width: 60px; }
+
+  .lang-bar {
+    flex: 1;
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .lang-fill {
+    height: 100%;
+    background: var(--accent-mid);
+    border-radius: 2px;
+  }
+
+  /* COMPETENCIAS */
+  .comp-intro {
+    max-width: 640px;
+    color: var(--muted);
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    font-weight: 300;
+  }
+
+  .comp-types {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .comp-type-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+
+  .comp-type-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .comp-type-card h4 {
+    font-family: var(--serif);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .comp-type-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+  /* NIVEL LOGRO */
+  .niveles-wrap {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .niveles-title {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .niveles-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.75rem;
+  }
+
+  .nivel-card {
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .nivel-num {
+    font-family: var(--serif);
+    font-size: 1.8rem;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .nivel-name {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
+  }
+
+  .nivel-desc { font-size: 0.75rem; line-height: 1.5; }
+
+  .n1 { background: #FCEBEB; }
+  .n1 .nivel-num, .n1 .nivel-name { color: #A32D2D; }
+  .n1 .nivel-desc { color: #791F1F; }
+
+  .n2 { background: #FAEEDA; }
+  .n2 .nivel-num, .n2 .nivel-name { color: #854F0B; }
+  .n2 .nivel-desc { color: #633806; }
+
+  .n3 { background: #EAF3DE; }
+  .n3 .nivel-num, .n3 .nivel-name { color: #3B6D11; }
+  .n3 .nivel-desc { color: #27500A; }
+
+  .n4 { background: #E6F1FB; }
+  .n4 .nivel-num, .n4 .nivel-name { color: #185FA5; }
+  .n4 .nivel-desc { color: #0C447C; }
+
+  .n5 { background: #EEEDFE; }
+  .n5 .nivel-num, .n5 .nivel-name { color: #534AB7; }
+  .n5 .nivel-desc { color: #3C3489; }
+
+  /* COMPETENCIA CARDS */
+  .comp-cards { display: flex; flex-direction: column; gap: 2rem; }
+
+  .comp-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .comp-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.75rem 2rem;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+  }
+
+  .comp-card-header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .comp-num {
+    font-family: var(--serif);
+    font-size: 2rem;
+    color: var(--border);
+    line-height: 1;
+    width: 32px;
+  }
+
+  .comp-card-header h3 {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    letter-spacing: -0.01em;
+  }
+
+  .comp-card-header p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 0.25rem;
+  }
+
+  .comp-nivel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .nivel-badge {
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+
+  .chevron {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    transition: transform 0.3s;
+    margin-left: 1rem;
+  }
+
+  .comp-card.open .chevron { transform: rotate(180deg); }
+
+  .comp-body {
+    display: none;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .comp-card.open .comp-body { display: grid; grid-template-columns: 1fr 1fr; }
+
+  .comp-section-title {
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .comp-desc { font-size: 0.92rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+
+  .evidencia-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    margin-bottom: 0.5rem;
+    background: var(--bg);
+  }
+
+  .ev-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  .ev-title { font-size: 0.88rem; font-weight: 500; color: var(--text); }
+  .ev-sub { font-size: 0.78rem; color: var(--muted); margin-top: 0.1rem; }
+
+  .reflexion-block {
+    background: var(--accent-light);
+    border-left: 3px solid var(--accent-mid);
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #085041;
+    font-style: italic;
+    line-height: 1.7;
+  }
+
+  /* PROYECTO DESTACADO */
+  .project-feature {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .project-info { padding: 2.5rem; }
+
+  .project-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-mid);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .project-info h3 {
+    font-family: var(--serif);
+    font-size: 1.8rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    line-height: 1.15;
+  }
+
+  .project-info p { font-size: 0.92rem; color: var(--muted); margin-bottom: 1.5rem; font-weight: 300; }
+
+  .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
+
+  .project-tag {
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+
+  .project-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 1.25rem 2.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .pstat { text-align: center; }
+
+  .pstat-num {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    color: var(--text);
+    display: block;
+  }
+
+  .pstat-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+
+  .project-visual {
+    background: #1A2A24;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem;
+    min-height: 280px;
+  }
+
+  .pcb-diagram {
+    width: 100%;
+    max-width: 220px;
+  }
+
+  /* CONTACTO */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .contact-text h2 {
+    font-family: var(--serif);
+    font-size: 2.4rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+
+  .contact-text p { color: var(--muted); font-size: 1rem; font-weight: 300; }
+
+  .contact-cards { display: flex; flex-direction: column; gap: 0.75rem; }
+
+  .contact-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    transition: border-color 0.2s;
+  }
+
+  .contact-card:hover { border-color: var(--accent-mid); }
+
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-detail h4 { font-size: 0.9rem; font-weight: 500; color: var(--text); }
+  .contact-detail p { font-size: 0.82rem; color: var(--muted); }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 0 1rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: auto; padding: 2rem 1rem; }
+    .hero-text { padding-right: 0; }
+    .hero-visual { display: none; }
+    .about-grid, .comp-types, .contact-grid, .project-feature { grid-template-columns: 1fr; }
+    .niveles-grid { grid-template-columns: 1fr 1fr; }
+    .comp-card.open .comp-body { grid-template-columns: 1fr; }
+    section { padding: 3rem 1rem; }
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-text, .hero-visual { animation: fadeUp 0.7s ease both; }
+  .hero-visual { animation-delay: 0.15s; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#inicio" class="nav-logo">Victoria Etcheverry</a>
+  <ul class="nav-links">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#competencias">Competencias</a></li>
+    <li><a href="#proyecto">Proyecto</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div id="inicio">
+  <div class="hero">
+    <div class="hero-text">
+      <span class="hero-tag">Portafolio de Competencias — UTEC 2025</span>
+      <h1>Ingeniería<br><em>Mecatrónica</em><br>en acción.</h1>
+      <p class="hero-desc">Soy Victoria Etcheverry, estudiante de 5.° semestre en UTEC Suroeste, Fray Bentos. Este portafolio documenta mis competencias técnicas, transversales y personales con evidencias reales.</p>
+      <div class="hero-cta">
+        <a href="#competencias" class="btn-primary">Ver Competencias</a>
+        <a href="#proyecto" class="btn-secondary">Proyecto Destacado</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="profile-card" style="margin-bottom:0;">
+        <div class="avatar">VE</div>
+        <div class="profile-info">
+          <h3>Victoria Etcheverry</h3>
+          <p>Ingeniería Mecatrónica · UTEC Fray Bentos</p>
+        </div>
+      </div>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-num">5.°</div>
+          <div class="stat-label">Semestre</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">B1</div>
+          <div class="stat-label">Inglés · ECCE</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">151</div>
+          <div class="stat-label">Días autonomía IoT</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">~95</div>
+          <div class="stat-label">USD costo prototipo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- SOBRE MÍ -->
+<section id="sobre-mi">
+  <div class="section-header">
+    <span class="section-tag">Sección 01</span>
+    <h2 class="section-title">Sobre mí</h2>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-text">
+      <p>Soy estudiante de <strong>Ingeniería en Mecatrónica</strong> en UTEC Suroeste (Fray Bentos), actualmente en 5.° semestre con todas las materias aprobadas. Me caracterizo por una fuerte orientación al aprendizaje continuo, la constancia y la responsabilidad.</p>
+      <p>Tengo un interés genuino en la <strong>colaboración intercultural</strong> y en el aprendizaje de idiomas como medio de conexión. Busco ampliar mi acceso a recursos técnicos internacionales y motivar a otros estudiantes del interior del país.</p>
+      <p>En mi formación he trabajado con diseño y fabricación de PCBs, programación de sistemas embebidos en C, protocolos de comunicación IoT (Sigfox), diseño CAD e impresión 3D.</p>
+      <div class="skills-list">
+        <span class="skill-tag">Altium Designer</span>
+        <span class="skill-tag">KiCad</span>
+        <span class="skill-tag">ATmega328PB</span>
+        <span class="skill-tag">C embebido</span>
+        <span class="skill-tag">Sigfox / IoT</span>
+        <span class="skill-tag">MATLAB</span>
+        <span class="skill-tag">AutoCAD</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">GitHub</span>
+        <span class="skill-tag">Impresión 3D</span>
+        <span class="skill-tag">Soldadura SMD/THT</span>
+        <span class="skill-tag">UART · I2C · SPI</span>
+      </div>
+    </div>
+
+    <div class="about-aside">
+      <div class="info-block">
+        <h4>Información académica</h4>
+        <div class="info-row"><span class="info-label">Carrera</span><span class="info-value">Ingeniería en Mecatrónica</span></div>
+        <div class="info-row"><span class="info-label">Institución</span><span class="info-value">UTEC Suroeste, Fray Bentos</span></div>
+        <div class="info-row"><span class="info-label">Semestre</span><span class="info-value">5.° · Todas las materias aprobadas</span></div>
+        <div class="info-row"><span class="info-label">Ubicación</span><span class="info-value">Brasil 3205 BIS, Fray Bentos, Río Negro</span></div>
+      </div>
+
+      <div class="info-block">
+        <h4>Idiomas</h4>
+        <div class="lang-bar-wrap">
+          <div class="lang-item">
+            <span class="lang-name">Español</span>
+            <span class="lang-level">Nativo</span>
+            <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+          </div>
+          <div class="lang-item">
+            <span class="lang-name">Inglés</span>
+            <span class="lang-level">B1 · ECCE</span>
+            <div class="lang-bar"><div class="lang-fill" style="width:55%"></div></div>
+          </div>
+          <div class="lang-item">
+            <span class="lang-name">Portugués</span>
+            <span class="lang-level">En formación</span>
+            <div class="lang-bar"><div class="lang-fill" style="width:25%"></div></div>
+          </div>
+          <div class="lang-item">
+            <span class="lang-name">Chino</span>
+            <span class="lang-level">Inicial</span>
+            <div class="lang-bar"><div class="lang-fill" style="width:10%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- COMPETENCIAS -->
+<section id="competencias">
+  <div class="section-header">
+    <span class="section-tag">Sección 02</span>
+    <h2 class="section-title">Portafolio de Competencias</h2>
+  </div>
+
+  <p class="comp-intro">Una competencia integra conocimientos, habilidades, actitudes y valores para desempeñar funciones en un contexto determinado. Se evalúan por niveles de logro según el perfil de egreso de UTEC.</p>
+
+  <!-- Tipos -->
+  <div class="comp-types">
+    <div class="comp-type-card">
+      <div class="comp-type-icon" style="background:#E1F5EE;">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1" fill="#1D9E75"/><rect x="9" y="2" width="5" height="5" rx="1" fill="#1D9E75"/><rect x="2" y="9" width="5" height="5" rx="1" fill="#1D9E75"/><rect x="9" y="9" width="5" height="5" rx="1" fill="#0F6E56"/></svg>
+      </div>
+      <h4>Competencias técnicas</h4>
+      <p>Conocimientos y habilidades propios de la ingeniería mecatrónica: electrónica, programación, diseño de sistemas.</p>
+    </div>
+    <div class="comp-type-card">
+      <div class="comp-type-icon" style="background:#EEEDFE;">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5" r="3" fill="#534AB7"/><path d="M2 14c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <h4>Competencias transversales</h4>
+      <p>Comunicación, trabajo en equipo, pensamiento crítico y autorregulación del aprendizaje.</p>
+    </div>
+    <div class="comp-type-card">
+      <div class="comp-type-icon" style="background:#FAEEDA;">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2l1.5 4h4l-3.2 2.4 1.2 3.9L8 10 4.5 12.3l1.2-3.9L2.5 6h4z" fill="#BA7517"/></svg>
+      </div>
+      <h4>Competencias personales</h4>
+      <p>Autogestión, motivación intrínseca y capacidad de adaptación a nuevos entornos y retos.</p>
+    </div>
+  </div>
+
+  <!-- Niveles de logro -->
+  <div class="niveles-wrap">
+    <div class="niveles-title">Escala de niveles de logro — UTEC</div>
+    <div class="niveles-grid">
+      <div class="nivel-card n1">
+        <div class="nivel-num">1</div>
+        <div class="nivel-name">Deficiente</div>
+        <div class="nivel-desc">Ausencia de evidencia de aprendizaje en la competencia.</div>
+      </div>
+      <div class="nivel-card n2">
+        <div class="nivel-num">2</div>
+        <div class="nivel-name">Insuficiente</div>
+        <div class="nivel-desc">Evidencia que no alcanza el mínimo requerido; errores que necesitan corrección.</div>
+      </div>
+      <div class="nivel-card n3">
+        <div class="nivel-num">3</div>
+        <div class="nivel-name">Suficiente</div>
+        <div class="nivel-desc">Cumple requisitos básicos con errores menores que no comprometen el desempeño.</div>
+      </div>
+      <div class="nivel-card n4">
+        <div class="nivel-num">4</div>
+        <div class="nivel-name">Muy bueno</div>
+        <div class="nivel-desc">Alto dominio sin errores significativos; guía docente ocasional.</div>
+      </div>
+      <div class="nivel-card n5">
+        <div class="nivel-num">5</div>
+        <div class="nivel-name">Excelente</div>
+        <div class="nivel-desc">Dominio excepcional y autónomo; capacidad de innovar más allá de lo enseñado.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cards de competencias -->
+  <div class="comp-cards">
+
+    <!-- C1: Diseño electrónico -->
+    <div class="comp-card" id="c1">
+      <div class="comp-card-header" onclick="toggleComp('c1')">
+        <div class="comp-card-header-left">
+          <div class="comp-num">01</div>
+          <div>
+            <h3>Diseño y fabricación de circuitos electrónicos</h3>
+            <p>Competencia técnica · Electrónica analógica, digital y de potencia</p>
+          </div>
+        </div>
+        <div class="comp-nivel">
+          <span class="nivel-badge" style="background:#E6F1FB;color:#185FA5;">Nivel 4 — Muy bueno</span>
+          <span class="chevron">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </div>
+      <div class="comp-body">
+        <div>
+          <div class="comp-section-title">Descripción</div>
+          <p class="comp-desc">Capacidad para diseñar, simular y fabricar circuitos electrónicos (analógicos, digitales y SMD) utilizando herramientas profesionales de CAD electrónico, técnicas de soldadura y metodologías de verificación.</p>
+
+          <div class="comp-section-title" style="margin-top:1.5rem;">Evidencias</div>
+          <div class="evidencia-item">
+            <div class="ev-icon" style="background:#E6F1FB;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="2" stroke="#185FA5" stroke-width="1.2"/><path d="M4 7h6M7 4v6" stroke="#185FA5" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="ev-title">PCB personalizada — Proyecto Integrador II</div>
+              <div class="ev-sub">Diseño en Altium Designer con ATmega328PB, Sigfox y sensores ambientales · 2025</div>
+            </div>
+          </div>
+          <div class="evidencia-item">
+            <div class="ev-icon" style="background:#E1F5EE;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5" stroke="#1D9E75" stroke-width="1.2"/><path d="M7 4v3l2 2" stroke="#1D9E75" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="ev-title">Soldadura SMD por reflujo en horno + THT con cautín</div>
+              <div class="ev-sub">Verificación con microscopio y multímetro · Laboratorio electrónica UTEC</div>
+            </div>
+          </div>
+          <div class="evidencia-item">
+            <div class="ev-icon" style="background:#FAEEDA;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M7 3h4v4" stroke="#BA7517" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="ev-title">Laboratorios de electrónica analógica, digital y microcontroladores</div>
+              <div class="ev-sub">Prácticas en laboratorio UTEC · 2024–2025</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="comp-section-title">Recursos adicionales</div>
+          <p style="font-size:0.88rem;color:var(--muted);margin-bottom:1rem;">Herramientas utilizadas: Altium Designer, KiCad, Proteus, MPLAB X IDE. Protocolos dominados: UART, I2C, SPI.</p>
+
+          <div class="reflexion-block">
+            "El proceso de diseñar una PCB propia para el Proyecto Integrador II fue el mayor desafío técnico que enfrenté hasta ahora. Aprendí que cada decisión de diseño —desde la disposición de pistas hasta la elección de componentes— tiene impacto directo en la autonomía y confiabilidad del sistema. La soldadura con microscopio me enseñó que la precisión no se improvisa."
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- C2: Programación embebida -->
+    <div class="comp-card" id="c2">
+      <div class="comp-card-header" onclick="toggleComp('c2')">
+        <div class="comp-card-header-left">
+          <div class="comp-num">02</div>
+          <div>
+            <h3>Programación de sistemas embebidos</h3>
+            <p>Competencia técnica · C a bajo nivel, interrupciones y bajo consumo</p>
+          </div>
+        </div>
+        <div class="comp-nivel">
+          <span class="nivel-badge" style="background:#E6F1FB;color:#185FA5;">Nivel 4 — Muy bueno</span>
+          <span class="chevron">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </div>
+      <div class="comp-body">
+        <div>
+          <div class="comp-section-title">Descripción</div>
+          <p class="comp-desc">Capacidad de programar microcontroladores en C a bajo nivel, implementando interrupciones, modos de bajo consumo energético, manejo de memoria EEPROM y comunicación con periféricos mediante protocolos estándar.</p>
+
+          <div class="comp-section-title" style="margin-top:1.5rem;">Evidencias</div>
+          <div class="evidencia-item">
+            <div class="ev-icon" style="background:#E6F1FB;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 5l-2 2 2 2M10 5l2 2-2 2M7 3l-1 8" stroke="#185FA5" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="ev-title">Código C para ATmega328PB — ciclo medir/transmitir/dormir</div>
+              <div class="ev-sub">WDT + Power-Down · 151 días de autonomía · GitHub repositorio público</div>
+            </div>
+          </div>
+          <div class="evidencia-item">
+            <div class="ev-icon" style="background:#E1F5EE;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="4" width="10" height="6" rx="1" stroke="#1D9E75" stroke-width="1.2"/><path d="M5 7h4M7 6v2" stroke="#1D9E75" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="ev-title">Módulo de gestión EEPROM y transmisión Sigfox</div>
+              <div class="ev-sub">Comparación de valores, persistencia y envío AT commands por UART</div>
+            </div>
+          </div>
+          <div class="evidencia-item">
+            <div class="ev-icon" style="background:#FAEEDA;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="#BA7517" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="ev-title">Laboratorios de microcontroladores</div>
+              <div class="ev-sub">Programación AVR, Arduino, MPLAB · Cursos 2024–2025</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="comp-section-title">Arquitectura del firmware</div>
+          <p style="font-size:0.88rem;color:var(--muted);margin-bottom:1rem;">El ciclo implementado: inicializar → medir (ADC) → comparar EEPROM → transmitir Sigfox → entrar en modo Power-Down con WDT de 8 s × 75 ciclos = 10 min entre transmisiones.</p>
+
+          <div class="reflexion-block">
+            "Aprender a programar en C a bajo nivel, sin la capa de abstracción de Arduino, me obligó a entender cómo funciona cada registro del microcontrolador. Gestionar el consumo energético para llegar a 151 días de autonomía con una batería de 1200 mAh fue el resultado de muchas iteraciones y cálculos precisos."
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- C3: Comunicación -->
+    <div class="comp-card" id="c3">
+      <div class="comp-card-header" onclick="toggleComp('c3')">
+        <div class="comp-card-header-left">
+          <div class="comp-num">03</div>
+          <div>
+            <h3>Comunicación técnica</h3>
+            <p>Competencia transversal · Expresión oral, escrita y documentación</p>
+          </div>
+        </div>
+        <div class="comp-nivel">
+          <span class="nivel-badge" style="background:#EEEDFE;color:#534AB7;">Nivel 4 — Muy bueno</span>
+          <span class="chevron">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </div>
+      <div class="comp-body">
+        <div>
+          <div class="comp-section-title">Descripción</div>
+          <p class="comp-desc">Capacidad de expresar ideas técnicas de forma clara y precisa, tanto de manera oral como escrita, adaptando el lenguaje al contexto y la audiencia. Incluye redacción de informes, presentaciones y documentación técnica.</p>
+
+          <div class="comp-section-title" style="margin-top:1.5rem;">Evidencias</div>
+          <div class="evidencia-item">
+            <div class="ev-icon" style="background:#EEEDFE;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 3h8v8H3z" stroke="#534AB7" stroke-width="1.2"/><path d="M5 6h4M5 8h3" stroke="#534AB7" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="ev-title">Informe PIC II — 61 páginas de documentación técnica</div>
+              <div class="ev-sub">Matrices MCDM, diagramas de Gantt, análisis de resultados · UTEC 2025</div>
+            </div>
+          </div>
+          <div class="evidencia-item">
+            <div class="ev-icon" style="background:#E1F5EE;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="5" r="2" stroke="#1D9E75" stroke-width="1.2"/><path d="M3 12c0-2.21 1.79-4 4-4s4 1.79 4 4" stroke="#1D9E75" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="ev-title">Presentaciones intermedias y finales de proyectos</div>
+              <div class="ev-sub">Exposición ante docentes y compañeros · Fray Bentos 2025</div>
+            </div>
+          </div>
+          <div class="evidencia-item">
+            <div class="ev-icon" style="background:#FAEEDA;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 4h10M2 7h7M2 10h5" stroke="#BA7517" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="ev-title">Práctica N°1 de Soldadura — informe técnico grupal</div>
+              <div class="ev-sub">Documentación de procesos SMD, THT e inspección · 2025</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="comp-section-title">Idiomas aplicados</div>
+          <p style="font-size:0.88rem;color:var(--muted);margin-bottom:1rem;">Certificación B1 de inglés (ECCE, Michigan, 2023). En formación en portugués (UTEC modalidad a distancia) y chino mandarín (nivel inicial).</p>
+
+          <div class="reflexion-block">
+            "Redactar el informe del Proyecto Integrador II me exigió organizar información compleja de manera coherente para distintas audiencias: técnica para los docentes, ejecutiva para la presentación. Aprendí que comunicar bien es tan importante como diseñar bien."
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- C4: Trabajo en equipo -->
+    <div class="comp-card" id="c4">
+      <div class="comp-card-header" onclick="toggleComp('c4')">
+        <div class="comp-card-header-left">
+          <div class="comp-num">04</div>
+          <div>
+            <h3>Trabajo en equipo y colaboración</h3>
+            <p>Competencia transversal · Coordinación, roles y entornos multidisciplinarios</p>
+          </div>
+        </div>
+        <div class="comp-nivel">
+          <span class="nivel-badge" style="background:#E1F5EE;color:#0F6E56;">Nivel 5 — Excelente</span>
+          <span class="chevron">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </div>
+      <div class="comp-body">
+        <div>
+          <div class="comp-section-title">Descripción</div>
+          <p class="comp-desc">Capacidad de colaborar eficazmente en equipos multidisciplinarios, coordinando tareas, aportando ideas y asumiendo responsabilidades compartidas para alcanzar objetivos comunes dentro de plazos establecidos.</p>
+
+          <div class="comp-section-title" style="margin-top:1.5rem;">Evidencias</div>
+          <div class="evidencia-item">
+            <div class="ev-icon" style="background:#E1F5EE;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="5" cy="5" r="2" stroke="#1D9E75" stroke-width="1.2"/><circle cx="9" cy="5" r="2" stroke="#1D9E75" stroke-width="1.2"/><path d="M2 12c0-1.66 1.34-3 3-3M9 9c1.66 0 3 1.34 3 3" stroke="#1D9E75" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="ev-title">Proyecto Integrador II — Grupo N°2 (3 integrantes)</div>
+              <div class="ev-sub">Victoria Etcheverry · Sofía Modernell · Guadalupe Sosa · UTEC 2025</div>
+            </div>
+          </div>
+          <div class="evidencia-item">
+            <div class="ev-icon" style="background:#FAEEDA;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="2" width="10" height="10" rx="1.5" stroke="#BA7517" stroke-width="1.2"/><path d="M5 5h4M5 7h4M5 9h2" stroke="#BA7517" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="ev-title">Diagrama de Gantt y gestión de hitos del proyecto</div>
+              <div class="ev-sub">Planificación, seguimiento y reuniones de avance documentadas · 2025</div>
+            </div>
+          </div>
+          <div class="evidencia-item">
+            <div class="ev-icon" style="background:#EEEDFE;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2l1.5 3.5H12l-2.8 2.1 1.1 3.5L7 9.2l-3.3 1.9 1.1-3.5L2 5.5h3.5z" fill="#534AB7"/></svg>
+            </div>
+            <div>
+              <div class="ev-title">Práctica de soldadura grupal — Informe conjunto</div>
+              <div class="ev-sub">Etcheverry · Modernell · Sosa · Laboratorio UTEC</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="comp-section-title">Metodología de trabajo</div>
+          <p style="font-size:0.88rem;color:var(--muted);margin-bottom:1rem;">El grupo utilizó un diagrama de Gantt con 5 fases: Inicio, Planificación, Ejecución (Fase 1 y 2), Seguimiento y Cierre. Se realizaron 4 reuniones de avance documentadas durante el semestre.</p>
+
+          <div class="reflexion-block">
+            "Trabajar en equipo para un proyecto tan técnico como el PIC II requirió mucha coordinación: dividimos las tareas según fortalezas y nos reunimos semanalmente para integrar el trabajo. La mayor lección fue aprender a comunicar avances y bloqueos a tiempo para no afectar el cronograma."
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- C5: Diseño y resolución de problemas -->
+    <div class="comp-card" id="c5">
+      <div class="comp-card-header" onclick="toggleComp('c5')">
+        <div class="comp-card-header-left">
+          <div class="comp-num">05</div>
+          <div>
+            <h3>Diseño de soluciones y resolución de problemas</h3>
+            <p>Competencia técnica-transversal · Metodología de ingeniería, MCDM, CAD</p>
+          </div>
+        </div>
+        <div class="comp-nivel">
+          <span class="nivel-badge" style="background:#EEEDFE;color:#534AB7;">Nivel 4 — Muy bueno</span>
+          <span class="chevron">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </div>
+      <div class="comp-body">
+        <div>
+          <div class="comp-section-title">Descripción</div>
+          <p class="comp-desc">Capacidad de identificar problemas de ingeniería, analizar sus causas mediante herramientas estructuradas (Ishikawa, matrices MCDM), generar soluciones alternativas, seleccionar la óptima con criterios objetivos y diseñar el prototipo correspondiente.</p>
+
+          <div class="comp-section-title" style="margin-top:1.5rem;">Evidencias</div>
+          <div class="evidencia-item">
+            <div class="ev-icon" style="background:#FAEEDA;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M2 7l4-4M2 7l4 4" stroke="#BA7517" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="ev-title">Diagrama de Ishikawa — análisis causal del sistema Arduino</div>
+              <div class="ev-sub">6 categorías: Sistema, Tamaño, Consumo, Integración, Mantenimiento, Transmisión</div>
+            </div>
+          </div>
+          <div class="evidencia-item">
+            <div class="ev-icon" style="background:#E1F5EE;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="2" rx="0.5" fill="#1D9E75"/><rect x="1" y="6" width="12" height="2" rx="0.5" fill="#1D9E75"/><rect x="1" y="9" width="12" height="2" rx="0.5" fill="#9FE1CB"/></svg>
+            </div>
+            <div>
+              <div class="ev-title">Matrices de decisión multicriterio (MCDM)</div>
+              <div class="ev-sub">Soluciones, sensores, materiales carcasa y batería · 5 criterios ponderados</div>
+            </div>
+          </div>
+          <div class="evidencia-item">
+            <div class="ev-icon" style="background:#E6F1FB;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="2" width="4" height="4" rx="1" stroke="#185FA5" stroke-width="1.2"/><rect x="8" y="2" width="4" height="4" rx="1" stroke="#185FA5" stroke-width="1.2"/><rect x="5" y="8" width="4" height="4" rx="1" stroke="#185FA5" stroke-width="1.2"/></svg>
+            </div>
+            <div>
+              <div class="ev-title">Diseño CAD de carcasa en 4 piezas + impresión 3D en PLA</div>
+              <div class="ev-sub">Soporte pared, cuerpo principal, adaptador batería, tapa posterior</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="comp-section-title">Proceso de toma de decisiones</div>
+          <p style="font-size:0.88rem;color:var(--muted);margin-bottom:1rem;">Se evaluaron 3 soluciones conceptuales. El "Sistema Optimizado" obtuvo 4,85/5 en la MCDM. Para sensores: BME280 (4,6/5), WCMCU-101 (4,65/5), batería Li-ion (4,45/5) y PLA (3,7/5) como material de carcasa.</p>
+
+          <div class="reflexion-block">
+            "La metodología MCDM me enseñó a tomar decisiones de ingeniería de forma objetiva, no intuitiva. Aprender a ponderar criterios y valorar alternativas con datos fue una de las competencias más útiles que desarrollé en este proyecto."
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- C6: Autogestión -->
+    <div class="comp-card" id="c6">
+      <div class="comp-card-header" onclick="toggleComp('c6')">
+        <div class="comp-card-header-left">
+          <div class="comp-num">06</div>
+          <div>
+            <h3>Autorregulación y gestión del aprendizaje</h3>
+            <p>Competencia personal · Organización, constancia y aprendizaje autónomo</p>
+          </div>
+        </div>
+        <div class="comp-nivel">
+          <span class="nivel-badge" style="background:#E1F5EE;color:#0F6E56;">Nivel 5 — Excelente</span>
+          <span class="chevron">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </div>
+      <div class="comp-body">
+        <div>
+          <div class="comp-section-title">Descripción</div>
+          <p class="comp-desc">Capacidad de organizar el tiempo y los recursos propios para cumplir objetivos académicos y personales, mantener constancia ante los desafíos, y buscar proactivamente nuevas oportunidades de aprendizaje más allá del currículo formal.</p>
+
+          <div class="comp-section-title" style="margin-top:1.5rem;">Evidencias</div>
+          <div class="evidencia-item">
+            <div class="ev-icon" style="background:#E1F5EE;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2a5 5 0 100 10A5 5 0 007 2zM7 5v2l2 1" stroke="#1D9E75" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="ev-title">5.° semestre con todas las materias aprobadas</div>
+              <div class="ev-sub">Historial académico sin interrupciones · UTEC 2024–2025</div>
+            </div>
+          </div>
+          <div class="evidencia-item">
+            <div class="ev-icon" style="background:#FAEEDA;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 11L12 3M7 3l5 0 0 5" stroke="#BA7517" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="ev-title">Aprendizaje de 4 idiomas de manera simultánea</div>
+              <div class="ev-sub">Español (nativo) · Inglés B1 (certificado) · Portugués (UTEC) · Chino (inicial)</div>
+            </div>
+          </div>
+          <div class="evidencia-item">
+            <div class="ev-icon" style="background:#EEEDFE;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2l1.5 4H13l-3.5 2.5 1.3 4L7 10l-3.8 2.5L4.5 8.5 1 6h4.5z" stroke="#534AB7" stroke-width="1.2" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="ev-title">Bachillerato Científico con Orientación Físico-Matemático</div>
+              <div class="ev-sub">Liceo N.° 2, Juan L. Lacaze · 2021–2023</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="comp-section-title">Estrategias de aprendizaje</div>
+          <p style="font-size:0.88rem;color:var(--muted);margin-bottom:1rem;">Uso de GitHub para control de versiones del código, documentación sistemática de cada etapa del proyecto, aprendizaje de idiomas mediante cursos a distancia (UTEC modalidad online para portugués).</p>
+
+          <div class="reflexion-block">
+            "Aprender a aprender es la habilidad que más valoro de mi formación. Estudiar cuatro idiomas mientras curso Mecatrónica me obliga a organizar mi tiempo con mucha disciplina. Cada idioma que aprendo me abre puertas a recursos técnicos que antes no podía acceder."
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PROYECTO DESTACADO -->
+<section id="proyecto">
+  <div class="section-header">
+    <span class="section-tag">Sección 03</span>
+    <h2 class="section-title">Proyecto destacado</h2>
+  </div>
+
+  <div class="project-feature">
+    <div>
+      <div class="project-info">
+        <span class="project-label">Proyecto Integrador II · UTEC 2025</span>
+        <h3>Actualización del sistema de recolección de datos de UTEC</h3>
+        <p>Desarrollo de un módulo IoT de monitoreo ambiental con PCB personalizada (ATmega328PB), sensores de temperatura, humedad, presión y luminosidad, comunicación Sigfox y carcasa impresa en 3D. El prototipo superó en funcionalidad y costo a dispositivos comerciales equivalentes.</p>
+        <div class="project-tags">
+          <span class="project-tag">ATmega328PB</span>
+          <span class="project-tag">PCB Altium</span>
+          <span class="project-tag">Sigfox IoT</span>
+          <span class="project-tag">C embebido</span>
+          <span class="project-tag">Impresión 3D PLA</span>
+          <span class="project-tag">EEPROM</span>
+          <span class="project-tag">BME280</span>
+          <span class="project-tag">WCMCU-101</span>
+        </div>
+        <a href="https://github.com/sosaguadalupe/Modulo_recolector_de_datos" class="btn-primary" target="_blank" style="display:inline-block;">Ver en GitHub</a>
+      </div>
+      <div class="project-stats">
+        <div class="pstat">
+          <span class="pstat-num">151</span>
+          <span class="pstat-label">días autonomía</span>
+        </div>
+        <div class="pstat">
+          <span class="pstat-num">~95</span>
+          <span class="pstat-label">USD costo total</span>
+        </div>
+        <div class="pstat">
+          <span class="pstat-num">10</span>
+          <span class="pstat-label">min entre env.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-visual">
+      <svg class="pcb-diagram" viewBox="0 0 220 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- PCB board -->
+        <rect x="20" y="20" width="180" height="160" rx="6" fill="#1C3A2E" stroke="#2A6B50" stroke-width="1"/>
+        <!-- mounting holes -->
+        <circle cx="32" cy="32" r="4" fill="none" stroke="#2A6B50" stroke-width="1"/>
+        <circle cx="188" cy="32" r="4" fill="none" stroke="#2A6B50" stroke-width="1"/>
+        <circle cx="32" cy="168" r="4" fill="none" stroke="#2A6B50" stroke-width="1"/>
+        <circle cx="188" cy="168" r="4" fill="none" stroke="#2A6B50" stroke-width="1"/>
+        <!-- MCU -->
+        <rect x="60" y="50" width="50" height="50" rx="2" fill="#2A2A1A" stroke="#6B6B40" stroke-width="0.8"/>
+        <text x="85" y="78" fill="#9FE1CB" font-size="7" text-anchor="middle" font-family="monospace">ATmega</text>
+        <text x="85" y="88" fill="#9FE1CB" font-size="7" text-anchor="middle" font-family="monospace">328PB</text>
+        <!-- Sigfox module -->
+        <rect x="130" y="50" width="50" height="35" rx="2" fill="#1A1A2A" stroke="#534AB7" stroke-width="0.8"/>
+        <text x="155" y="65" fill="#AFA9EC" font-size="6" text-anchor="middle" font-family="monospace">WSSFM10</text>
+        <text x="155" y="76" fill="#AFA9EC" font-size="6" text-anchor="middle" font-family="monospace">Sigfox</text>
+        <!-- Sensors -->
+        <rect x="40" y="120" width="30" height="20" rx="2" fill="#1A2A1A" stroke="#1D9E75" stroke-width="0.8"/>
+        <text x="55" y="133" fill="#5DCAA5" font-size="5.5" text-anchor="middle" font-family="monospace">BME280</text>
+        <rect x="80" y="120" width="35" height="20" rx="2" fill="#1A2A20" stroke="#1D9E75" stroke-width="0.8"/>
+        <text x="97" y="133" fill="#5DCAA5" font-size="5.5" text-anchor="middle" font-family="monospace">WCMCU101</text>
+        <!-- Capacitors -->
+        <rect x="130" y="100" width="8" height="14" rx="1" fill="#3A3A20"/>
+        <rect x="142" y="100" width="8" height="14" rx="1" fill="#3A3A20"/>
+        <!-- Resistors -->
+        <rect x="155" y="100" width="14" height="6" rx="1" fill="#3A2020"/>
+        <rect x="155" y="110" width="14" height="6" rx="1" fill="#3A2020"/>
+        <!-- Traces -->
+        <path d="M110 75 L130 75" stroke="#2A6B50" stroke-width="1"/>
+        <path d="M110 85 L115 85 L115 120 L120 120" stroke="#2A6B50" stroke-width="0.7"/>
+        <path d="M97 120 L97 110 L85 110 L85 100" stroke="#2A6B50" stroke-width="0.7"/>
+        <!-- Antenna connector -->
+        <circle cx="185" cy="75" r="5" fill="none" stroke="#BA7517" stroke-width="1"/>
+        <circle cx="185" cy="75" r="2" fill="#BA7517"/>
+        <!-- ISP header -->
+        <rect x="30" y="50" width="18" height="30" rx="1" fill="#2A2A2A" stroke="#444" stroke-width="0.5"/>
+        <circle cx="35" cy="57" r="1.5" fill="#888"/>
+        <circle cx="43" cy="57" r="1.5" fill="#888"/>
+        <circle cx="35" cy="64" r="1.5" fill="#888"/>
+        <circle cx="43" cy="64" r="1.5" fill="#888"/>
+        <circle cx="35" cy="71" r="1.5" fill="#888"/>
+        <circle cx="43" cy="71" r="1.5" fill="#888"/>
+        <!-- Labels -->
+        <text x="85" y="42" fill="#9FE1CB" font-size="6" text-anchor="middle" font-family="monospace" opacity="0.7">PCB · ATmega328PB</text>
+        <text x="110" y="185" fill="#9FE1CB" font-size="6" text-anchor="middle" font-family="monospace" opacity="0.5">Altium Designer · UTEC 2025</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="contact-grid">
+    <div class="contact-text">
+      <span class="section-tag">Sección 04</span>
+      <h2>¿Hablamos?</h2>
+      <p style="margin-top:1rem;">Estoy abierta a oportunidades de intercambio, colaboración y aprendizaje. Si eres docente, evaluador o estás interesado en mi perfil, no dudes en contactarme.</p>
+    </div>
+
+    <div class="contact-cards">
+      <a href="mailto:vitoetcheverrys@gmail.com" class="contact-card">
+        <div class="contact-icon" style="background:#E1F5EE;">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="2" stroke="#1D9E75" stroke-width="1.2"/><path d="M2 6l7 5 7-5" stroke="#1D9E75" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="contact-detail">
+          <h4>Correo electrónico</h4>
+          <p>vitoetcheverrys@gmail.com</p>
+        </div>
+      </a>
+
+      <a href="tel:+59892045529" class="contact-card">
+        <div class="contact-icon" style="background:#EEEDFE;">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="5" y="2" width="8" height="14" rx="2" stroke="#534AB7" stroke-width="1.2"/><circle cx="9" cy="13" r="1" fill="#534AB7"/></svg>
+        </div>
+        <div class="contact-detail">
+          <h4>Teléfono</h4>
+          <p>092 045 529 · Uruguay</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/sosaguadalupe/Modulo_recolector_de_datos" class="contact-card" target="_blank">
+        <div class="contact-icon" style="background:#F4F1EB;">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#1A1916" stroke-width="1.2"/><path d="M6 14v-2.5c0-.7.6-1.3 1.3-1.3H9m0 0V14M9 10.2c.4-.8 1.3-1.4 2.2-1.4.7 0 1.3.3 1.8.8.3.3.5.7.5 1.2 0 1.1-.6 2-1.5 2.5" stroke="#1A1916" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="contact-detail">
+          <h4>GitHub — Proyecto PIC II</h4>
+          <p>Módulo recolector de datos IoT</p>
+        </div>
+      </a>
+
+      <div class="contact-card" style="cursor:default;">
+        <div class="contact-icon" style="background:#E1F5EE;">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2a7 7 0 100 14A7 7 0 009 2z" stroke="#1D9E75" stroke-width="1.2"/><path d="M9 5v4l3 2" stroke="#1D9E75" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="contact-detail">
+          <h4>Ubicación</h4>
+          <p>Brasil 3205 BIS, Fray Bentos, Río Negro, Uruguay</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Portafolio de Evaluación de Competencias · Victoria Etcheverry Senas · UTEC Suroeste · 2025</p>
+</footer>
+
+<script>
+  function toggleComp(id) {
+    var card = document.getElementById(id);
+    card.classList.toggle('open');
+  }
+</script>
+</body>
+</html>

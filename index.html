@@ -1188,67 +1188,96 @@
           Estoy completamente abierta a recibir devoluciones, consejos y recomendaciones, ya que los considero una parte fundamental del aprendizaje. Espero seguir teniendo oportunidades para poner en práctica mis conocimientos, enfrentarme a nuevos desafíos y seguir creciendo tanto en lo técnico como en lo profesional.
         </p>
        <div>
-  <div class="comp-section-title">Fortalezas</div>
+      <!-- Autoevaluación -->
+<div class="comp-cards">
+  <div class="comp-card" id="c5">
+    <div class="comp-card-header" onclick="toggleComp('c5')">
+      <div class="comp-card-header-left">
+        <div class="comp-num">05</div>
+        <div>
+          <h3>Autoevaluación</h3>
+        </div>
+      </div>
+      <div class="comp-nivel">
+        <span class="chevron">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </div>
+    </div>
 
-  <div class="evidencia-item" style="flex-direction:column; gap:0.5rem;">
-    <div style="display:flex; align-items:center; gap:0.75rem;">
-      <div class="ev-icon" style="background:#EAF3DE;">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l4 4 6-6" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div>
-        <div class="ev-title">Programación embebida</div>
-        <div class="ev-sub">C, Assembler, Python · microcontroladores</div>
-      </div>
-    </div>
-    <div style="display:flex; align-items:center; gap:0.75rem;">
-      <div class="ev-icon" style="background:#EAF3DE;">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l4 4 6-6" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div>
-        <div class="ev-title">Diseño y fabricación electrónica</div>
-        <div class="ev-sub">PCB, soldadura SMD/THT, Altium, KiCad</div>
-      </div>
-    </div>
-    <div style="display:flex; align-items:center; gap:0.75rem;">
-      <div class="ev-icon" style="background:#EAF3DE;">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l4 4 6-6" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div>
-        <div class="ev-title">Integración IoT</div>
-        <div class="ev-sub">Sigfox, MQTT, APIs externas</div>
-      </div>
-    </div>
-    <div style="display:flex; align-items:center; gap:0.75rem;">
-      <div class="ev-icon" style="background:#EAF3DE;">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l4 4 6-6" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div>
-        <div class="ev-title">Constancia y autonomía</div>
-        <div class="ev-sub">Aprendizaje continuo y orientación a resultados</div>
-      </div>
-    </div>
-  </div>
+    <div class="comp-body">
 
-  <div class="comp-section-title" style="margin-top:1.5rem;">Áreas de mejora</div>
+      <!-- Columna izquierda: texto -->
+      <div>
+        <p class="comp-desc">
+          A lo largo de este semestre considero que he logrado cubrir las competencias propuestas, evidenciándolo a través de los proyectos y actividades documentados en este portafolio.
+        </p>
+        <p class="comp-desc">
+          Uno de los avances que más valoro es el crecimiento en programación y en la integración con sistemas mecánicos. Antes de comenzar la carrera mi contacto con estas áreas era muy limitado, y hoy puedo decir que me siento cómoda trabajando con microcontroladores, desarrollando código embebido e integrando electrónica con componentes físicos. Ese salto es para mí uno de los logros más significativos del camino recorrido hasta ahora.
+        </p>
+        <p class="comp-desc">
+          Dicho esto, también reconozco que hay aspectos que pueden afianzarse más. La mecánica es el área donde siento que tengo más margen de crecimiento: si bien pude participar en actividades prácticas, me gustaría ganar mayor confianza al intervenir físicamente en sistemas, desarrollar más intuición para diagnosticar fallas y profundizar en el análisis de componentes mecánicos. También siento que el desarrollo de soluciones desde cero es algo que quiero seguir ejercitando, ya que implica no solo conocimiento técnico sino también criterio para tomar decisiones de diseño, evaluar alternativas y justificar cada elección.
+        </p>
+        <p class="comp-desc">
+          Estoy completamente abierta a recibir devoluciones, consejos y recomendaciones, ya que los considero una parte fundamental del aprendizaje. Espero seguir teniendo oportunidades para poner en práctica mis conocimientos, enfrentarme a nuevos desafíos y seguir creciendo tanto en lo técnico como en lo profesional.
+        </p>
+      </div>
 
-  <div class="evidencia-item" style="flex-direction:column; gap:0.5rem;">
-    <div style="display:flex; align-items:center; gap:0.75rem;">
-      <div class="ev-icon" style="background:#FAEEDA;">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 3v5M7 10v1" stroke="#854F0B" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </div>
+      <!-- Columna derecha: fortalezas y áreas de mejora -->
       <div>
-        <div class="ev-title">Mecánica aplicada</div>
-        <div class="ev-sub">Diagnóstico de fallas y análisis de componentes</div>
+        <div class="comp-section-title">Fortalezas</div>
+        <div class="evidencia-item" style="flex-direction:column; gap:0.6rem; margin-bottom:1rem;">
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <div class="ev-icon" style="background:#EAF3DE;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l4 4 6-6" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="ev-title">Orientación al aprendizaje continuo</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <div class="ev-icon" style="background:#EAF3DE;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l4 4 6-6" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="ev-title">Capacidad de integrar teoría y práctica</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <div class="ev-icon" style="background:#EAF3DE;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l4 4 6-6" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="ev-title">Constancia y responsabilidad</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <div class="ev-icon" style="background:#EAF3DE;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l4 4 6-6" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="ev-title">Apertura a la retroalimentación</div>
+          </div>
+        </div>
+
+        <div class="comp-section-title" style="margin-top:1.5rem;">Áreas de mejora</div>
+        <div class="evidencia-item" style="flex-direction:column; gap:0.6rem;">
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <div class="ev-icon" style="background:#FAEEDA;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 3v5M7 10v1" stroke="#854F0B" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div class="ev-title">Profundizar en el área mecánica</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <div class="ev-icon" style="background:#FAEEDA;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 3v5M7 10v1" stroke="#854F0B" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div class="ev-title">Desarrollar mayor criterio de diseño propio</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <div class="ev-icon" style="background:#FAEEDA;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 3v5M7 10v1" stroke="#854F0B" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div class="ev-title">Ganar más experiencia en proyectos reales</div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div style="display:flex; align-items:center; gap:0.75rem;">
-      <div class="ev-icon" style="background:#FAEEDA;">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 3v5M7 10v1" stroke="#854F0B" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </div>
-      <div>
-        <div class="ev-title">Diseño de soluciones desde cero</div>
-        <div class="ev-sub">Criterio de diseño, evaluación de alternativas</div>
-      </div>
+
     </div>
   </div>
 </div>

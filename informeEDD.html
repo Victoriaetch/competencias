@@ -10,21 +10,22 @@
 
 <style>
 
-/* (mismo CSS que arriba, podés reutilizarlo tal cual) */
-
 :root {
     --bg: #F0F4F8;
     --card: #FAFCFF;
     --text: #0F1A2A;
     --muted: #5A6B80;
     --accent: #1A4A8A;
-    --accent-light: #E6F1FB;
     --border: rgba(15,26,42,0.12);
     --serif: 'DM Serif Display', serif;
     --sans: 'DM Sans', sans-serif;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body{
     font-family:var(--sans);
@@ -32,6 +33,7 @@ body{
     color:var(--text);
 }
 
+/* NAV */
 nav{
     position:sticky;
     top:0;
@@ -42,8 +44,12 @@ nav{
     padding:1rem 2rem;
 }
 
-.nav-title{font-family:var(--serif);font-size:1.1rem;}
+.nav-title{
+    font-family:var(--serif);
+    font-size:1.1rem;
+}
 
+/* HERO */
 .hero{
     max-width:1200px;
     margin:auto;
@@ -55,8 +61,11 @@ nav{
     font-size:clamp(2rem,4vw,3rem);
 }
 
-.hero p{color:var(--muted);}
+.hero p{
+    color:var(--muted);
+}
 
+/* GRID */
 .gallery{
     max-width:1200px;
     margin:auto;
@@ -66,6 +75,7 @@ nav{
     gap:1.5rem;
 }
 
+/* CARD */
 .card{
     background:var(--card);
     border:1px solid var(--border);
@@ -83,6 +93,7 @@ nav{
     font-size:0.7rem;
     color:var(--muted);
     text-transform:uppercase;
+    letter-spacing:0.08em;
 }
 
 .card h3{
@@ -96,8 +107,11 @@ nav{
     font-weight:500;
 }
 
-.card a:hover{text-decoration:underline;}
+.card a:hover{
+    text-decoration:underline;
+}
 
+/* BACK BUTTON */
 .back-wrap{
     text-align:center;
     padding:3rem;
@@ -111,7 +125,9 @@ nav{
     text-decoration:none;
 }
 
-.back-btn:hover{opacity:0.9;}
+.back-btn:hover{
+    opacity:0.9;
+}
 
 </style>
 </head>
@@ -124,7 +140,7 @@ nav{
 
 <section class="hero">
     <h1>Informes EDD</h1>
-    <p>Laboratorios de estructuras de datos aplicadas a sistemas.</p>
+    <p>Estructuras de datos aplicadas a sistemas mecatrónicos.</p>
 </section>
 
 <section class="gallery">
@@ -132,25 +148,25 @@ nav{
     <div class="card">
         <div class="card-type">Laboratorio</div>
         <h3>Laboratorio 1</h3>
-        <a href="Operación%20de%20Sistemas%20Mecatrónicos/EDD%20informes/ED.pdf" target="_blank">Abrir PDF</a>
+        <a href="Operación%20de%20Sistemas%20Mecatrónicos/EDD/ED.pdf" target="_blank">Abrir PDF</a>
     </div>
 
     <div class="card">
         <div class="card-type">Laboratorio</div>
         <h3>Laboratorio 2</h3>
-        <a href="Operación%20de%20Sistemas%20Mecatrónicos/EDD%20informes/ED%20Lab%202.docx.pdf" target="_blank">Abrir PDF</a>
+        <a href="Operación%20de%20Sistemas%20Mecatrónicos/EDD/ED%20Lab%202.docx.pdf" target="_blank">Abrir PDF</a>
     </div>
 
     <div class="card">
         <div class="card-type">Laboratorio</div>
         <h3>Laboratorio 3</h3>
-        <a href="Operación%20de%20Sistemas%20Mecatrónicos/EDD%20informes/Laboratorio%203.pdf" target="_blank">Abrir PDF</a>
+        <a href="Operación%20de%20Sistemas%20Mecatrónicos/EDD/Laboratorio%203.pdf" target="_blank">Abrir PDF</a>
     </div>
 
     <div class="card">
         <div class="card-type">Laboratorio</div>
         <h3>Laboratorio 4</h3>
-        <a href="Operación%20de%20Sistemas%20Mecatrónicos/EDD%20informes/Laboratorio%204.docx.pdf" target="_blank">Abrir PDF</a>
+        <a href="Operación%20de%20Sistemas%20Mecatrónicos/EDD/Laboratorio%204.docx.pdf" target="_blank">Abrir PDF</a>
     </div>
 
 </section>

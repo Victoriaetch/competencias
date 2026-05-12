@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Informes EAA</title>
+</head>
+<body>
+
+  <h1>Informes EAA - Operación de Sistemas Mecatrónicos</h1>
+
+  <h2>Laboratorios</h2>
+
+  <h3>EAA Lab 2</h3>
+  <a href="Operación%20de%20Sistemas%20Mecatrónicos/EAA_Labs/EAA%20Lab%202.pdf" target="_blank">
+    Abrir PDF
+  </a>
+
+  <br><br>
+
+  <h3>Laboratorio 3</h3>
+  <a href="Operación%20de%20Sistemas%20Mecatrónicos/EAA_Labs/Laboratorio%203%20(1).pdf" target="_blank">
+    Abrir PDF
+  </a>
+
+  <br><br>
+
+  <h3>Laboratorio 4</h3>
+  <a href="Operación%20de%20Sistemas%20Mecatrónicos/EAA_Labs/Laboratorio%204.pdf" target="_blank">
+    Abrir PDF
+  </a>
+
+  <br><br>
+
+  <h3>Laboratorio 5</h3>
+  <a href="Operación%20de%20Sistemas%20Mecatrónicos/EAA_Labs/Laboratorio%205.pdf" target="_blank">
+    Abrir PDF
+  </a>
+
+</body>
+</html>

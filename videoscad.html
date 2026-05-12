@@ -36,7 +36,6 @@ body{
 }
 
 /* NAV */
-
 nav{
     position:sticky;
     top:0;
@@ -53,7 +52,6 @@ nav{
 }
 
 /* HERO */
-
 .hero{
     max-width:1200px;
     margin:auto;
@@ -89,19 +87,16 @@ nav{
 }
 
 /* GRID */
-
 .gallery{
     max-width:1200px;
     margin:auto;
     padding:0 2rem 5rem;
-
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
     gap:1.5rem;
 }
 
 /* CARD */
-
 .card{
     background:var(--card);
     border:1px solid var(--border);
@@ -121,7 +116,8 @@ nav{
 }
 
 .card img,
-.card video{
+.card video,
+iframe{
     width:100%;
     display:block;
 }
@@ -151,7 +147,6 @@ nav{
 }
 
 /* BUTTON */
-
 .back-wrap{
     text-align:center;
     padding-bottom:5rem;
@@ -197,18 +192,18 @@ nav{
     </h1>
 
     <p>
-        Modelado CAD y visualización del sistema biela–pistón–cigüeñal, incluyendo ensamblajes, piezas individuales y simulación de movimiento.
+        Modelado CAD y simulación del sistema biela–pistón–cigüeñal con análisis de movimiento y ensamblaje.
     </p>
 
 </section>
 
 <section class="gallery">
 
-    <!-- PDF 1 -->
+    <!-- BIELA -->
     <div class="card">
         <div class="card-media">
             <iframe src="https://raw.githubusercontent.com/Victoriaetch/competencias/289924dc2610a58d368ed0d688d29cb34552439e/Dise%C3%B1o/Cad/Biela%20Victoria%20Etcheverry.pdf"
-            width="100%" height="400px"></iframe>
+            height="400px"></iframe>
         </div>
         <div class="card-content">
             <div class="card-type">PDF</div>
@@ -217,11 +212,11 @@ nav{
         </div>
     </div>
 
-    <!-- PDF 2 -->
+    <!-- ENSAMBLAJE -->
     <div class="card">
         <div class="card-media">
-            <iframe src="https://raw.githubusercontent.com/Victoriaetch/competencias/289924dc2610a58d368ed0d688d29cb34552439e/Dise%C3%B1o/Cad/Ensamblaje%20piston%2C%20cigue%C3%B1al%20y%20biela.%20Victoria%20Etcheverry.pdf"
-            width="100%" height="400px"></iframe>
+            <iframe src="https://raw.githubusercontent.com/Victoriaetch/competencias/289924dc2610a58d368ed0d688d29cb34552439e/Dise%C3%B1o/Cad/Ensamblaje%20pist%C3%B3n%2C%20cig%C3%BCe%C3%B1al%20y%20biela.%20Victoria%20Etcheverry.pdf"
+            height="400px"></iframe>
         </div>
         <div class="card-content">
             <div class="card-type">PDF</div>
@@ -234,21 +229,21 @@ nav{
     <div class="card">
         <div class="card-media">
             <video controls>
-                <source src="https://raw.githubusercontent.com/Victoriaetch/competencias/289924dc2610a58d368ed0d688d29cb34552439e/Dise%C3%B1o/Cad/Movimiento%20cigue%C3%B1al%2C%20biela%20y%20piston.%20Victoria%20Etcheverry.mp4" type="video/mp4">
+                <source src="https://raw.githubusercontent.com/Victoriaetch/competencias/289924dc2610a58d368ed0d688d29cb34552439e/Dise%C3%B1o/Cad/Movimiento%20cig%C3%BCe%C3%B1al%2C%20biela%20y%20piston.%20Victoria%20Etcheverry.mp4" type="video/mp4">
             </video>
         </div>
         <div class="card-content">
             <div class="card-type">Video</div>
             <h3>Movimiento del sistema</h3>
-            <p>Simulación cinemática del mecanismo.</p>
+            <p>Simulación cinemática.</p>
         </div>
     </div>
 
-    <!-- PDF 3 -->
+    <!-- CIGÜEÑAL -->
     <div class="card">
         <div class="card-media">
-            <iframe src="https://raw.githubusercontent.com/Victoriaetch/competencias/289924dc2610a58d368ed0d688d29cb34552439e/Dise%C3%B1o/Cad/cigue%C3%B1al%20Victoria%20Etcheverry%20%281%29.pdf"
-            width="100%" height="400px"></iframe>
+            <iframe src="https://raw.githubusercontent.com/Victoriaetch/competencias/289924dc2610a58d368ed0d688d29cb34552439e/Dise%C3%B1o/Cad/cig%C3%BCe%C3%B1al%20Victoria%20Etcheverry%20%281%29.pdf"
+            height="400px"></iframe>
         </div>
         <div class="card-content">
             <div class="card-type">PDF</div>
@@ -257,11 +252,11 @@ nav{
         </div>
     </div>
 
-    <!-- PDF 4 -->
+    <!-- PISTÓN -->
     <div class="card">
         <div class="card-media">
             <iframe src="https://raw.githubusercontent.com/Victoriaetch/competencias/289924dc2610a58d368ed0d688d29cb34552439e/Dise%C3%B1o/Cad/piston%20Victoria%20Etcheverry%20%281%29.pdf"
-            width="100%" height="400px"></iframe>
+            height="400px"></iframe>
         </div>
         <div class="card-content">
             <div class="card-type">PDF</div>

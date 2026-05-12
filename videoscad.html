@@ -16,12 +16,17 @@
     --text: #0F1A2A;
     --muted: #5A6B80;
     --accent: #1A4A8A;
+    --accent-light: #E6F1FB;
     --border: rgba(15,26,42,0.12);
     --serif: 'DM Serif Display', serif;
     --sans: 'DM Sans', sans-serif;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body{
     font-family:var(--sans);
@@ -43,29 +48,49 @@ nav{
 
 .nav-title{
     font-family:var(--serif);
+    font-size:1.1rem;
 }
 
 /* HERO */
 .hero{
     max-width:1200px;
     margin:auto;
-    padding:4rem 2rem 2rem;
+    padding:5rem 2rem 3rem;
+}
+
+.hero-tag{
+    display:inline-block;
+    background:var(--accent-light);
+    color:var(--accent);
+    font-size:0.75rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:5px 12px;
+    border-radius:20px;
+    margin-bottom:1.5rem;
+    font-weight:500;
 }
 
 .hero h1{
     font-family:var(--serif);
-    font-size:clamp(2rem,4vw,3rem);
+    font-size:clamp(2.5rem,5vw,4rem);
+    line-height:1.05;
+    letter-spacing:-0.03em;
+    margin-bottom:1rem;
 }
 
 .hero p{
+    max-width:650px;
     color:var(--muted);
+    font-size:1rem;
+    font-weight:300;
 }
 
 /* GRID */
 .gallery{
     max-width:1200px;
     margin:auto;
-    padding:2rem;
+    padding:0 2rem 5rem;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
     gap:1.5rem;
@@ -75,9 +100,9 @@ nav{
 .card{
     background:var(--card);
     border:1px solid var(--border);
-    border-radius:16px;
+    border-radius:18px;
     overflow:hidden;
-    transition:0.2s;
+    transition:transform .2s ease, border-color .2s ease;
 }
 
 .card:hover{
@@ -85,8 +110,14 @@ nav{
     border-color:#b8cbe2;
 }
 
-.card-media img,
-.card-media video{
+.card-media{
+    width:100%;
+    background:#dfe9f5;
+}
+
+.card img,
+.card video,
+iframe{
     width:100%;
     display:block;
 }
@@ -96,37 +127,45 @@ nav{
 }
 
 .card-type{
-    font-size:0.7rem;
+    font-size:0.72rem;
     text-transform:uppercase;
-    color:var(--muted);
     letter-spacing:0.08em;
+    color:var(--muted);
+    margin-bottom:0.5rem;
+    font-weight:500;
 }
 
 .card h3{
     font-family:var(--serif);
-    margin:0.5rem 0;
+    font-size:1.25rem;
+    margin-bottom:0.6rem;
 }
 
 .card p{
     color:var(--muted);
-    font-size:0.9rem;
+    font-size:0.92rem;
 }
 
 /* BUTTON */
 .back-wrap{
     text-align:center;
-    padding:3rem;
+    padding-bottom:5rem;
 }
 
 .back-btn{
+    display:inline-block;
+    text-decoration:none;
     background:var(--accent);
     color:white;
     padding:12px 22px;
     border-radius:8px;
-    text-decoration:none;
+    font-size:0.9rem;
+    transition:0.2s;
 }
 
-.back-btn:hover{opacity:0.9;}
+.back-btn:hover{
+    opacity:0.9;
+}
 
 </style>
 </head>
@@ -134,35 +173,55 @@ nav{
 <body>
 
 <nav>
-    <div class="nav-title">Diseño CAD — Mecatrónica</div>
+    <div class="nav-title">
+        Diseño CAD — Mecatrónica
+    </div>
 </nav>
 
 <section class="hero">
-    <h1>Ensambles mecánicos</h1>
-    <p>Biela, pistón y cigüeñal con modelado CAD y simulación de movimiento.</p>
+
+    <span class="hero-tag">
+        Modelado y simulación
+    </span>
+
+    <h1>
+        Ensambles mecánicos<br>
+        <em style="color:var(--accent); font-style:italic;">
+            Biela · Pistón · Cigüeñal
+        </em>
+    </h1>
+
+    <p>
+        Modelado CAD y simulación del sistema biela–pistón–cigüeñal con análisis de movimiento y ensamblaje.
+    </p>
+
 </section>
 
 <section class="gallery">
 
     <!-- BIELA -->
     <div class="card">
+        <div class="card-media">
+            <iframe src="https://raw.githubusercontent.com/Victoriaetch/competencias/289924dc2610a58d368ed0d688d29cb34552439e/Dise%C3%B1o/Cad/Biela%20Victoria%20Etcheverry.pdf"
+            height="400px"></iframe>
+        </div>
         <div class="card-content">
             <div class="card-type">PDF</div>
             <h3>Biela</h3>
-            <a href="https://github.com/Victoriaetch/competencias/blob/289924dc2610a58d368ed0d688d29cb34552439e/Dise%C3%B1o/Cad/Biela%20Victoria%20Etcheverry.pdf" target="_blank">
-                Abrir PDF
-            </a>
+            <p>Modelo CAD de la biela.</p>
         </div>
     </div>
 
     <!-- ENSAMBLAJE -->
     <div class="card">
+        <div class="card-media">
+            <iframe src="https://raw.githubusercontent.com/Victoriaetch/competencias/289924dc2610a58d368ed0d688d29cb34552439e/Dise%C3%B1o/Cad/Ensamblaje%20pist%C3%B3n%2C%20cig%C3%BCe%C3%B1al%20y%20biela.%20Victoria%20Etcheverry.pdf"
+            height="400px"></iframe>
+        </div>
         <div class="card-content">
             <div class="card-type">PDF</div>
-            <h3>Ensamblaje pistón–biela–cigüeñal</h3>
-            <a href="https://github.com/Victoriaetch/competencias/blob/289924dc2610a58d368ed0d688d29cb34552439e/Dise%C3%B1o/Cad/Ensamblaje%20pist%C3%B3n%2C%20cig%C3%BCe%C3%B1al%20y%20biela.%20Victoria%20Etcheverry.pdf" target="_blank">
-                Abrir PDF
-            </a>
+            <h3>Ensamblaje completo</h3>
+            <p>Sistema pistón–biela–cigüeñal.</p>
         </div>
     </div>
 
@@ -170,42 +229,48 @@ nav{
     <div class="card">
         <div class="card-media">
             <video controls>
-                <source src="https://raw.githubusercontent.com/Victoriaetch/competencias/289924dc2610a58d368ed0d688d29cb34552439e/Dise%C3%B1o/Cad/Movimiento%20cig%C3%BCe%C3%B1al%2C%20biela%20y%20piston.%20Victoria%20Etcheverry.mp4">
+                <source src="https://raw.githubusercontent.com/Victoriaetch/competencias/289924dc2610a58d368ed0d688d29cb34552439e/Dise%C3%B1o/Cad/Movimiento%20cig%C3%BCe%C3%B1al%2C%20biela%20y%20piston.%20Victoria%20Etcheverry.mp4" type="video/mp4">
             </video>
         </div>
         <div class="card-content">
             <div class="card-type">Video</div>
             <h3>Movimiento del sistema</h3>
-            <p>Simulación del mecanismo biela–pistón–cigüeñal.</p>
+            <p>Simulación cinemática.</p>
         </div>
     </div>
 
     <!-- CIGÜEÑAL -->
     <div class="card">
+        <div class="card-media">
+            <iframe src="https://raw.githubusercontent.com/Victoriaetch/competencias/289924dc2610a58d368ed0d688d29cb34552439e/Dise%C3%B1o/Cad/cig%C3%BCe%C3%B1al%20Victoria%20Etcheverry%20%281%29.pdf"
+            height="400px"></iframe>
+        </div>
         <div class="card-content">
             <div class="card-type">PDF</div>
             <h3>Cigüeñal</h3>
-            <a href="https://github.com/Victoriaetch/competencias/blob/289924dc2610a58d368ed0d688d29cb34552439e/Dise%C3%B1o/Cad/cig%C3%BCe%C3%B1al%20Victoria%20Etcheverry%20%281%29.pdf" target="_blank">
-                Abrir PDF
-            </a>
+            <p>Modelo del eje cigüeñal.</p>
         </div>
     </div>
 
     <!-- PISTÓN -->
     <div class="card">
+        <div class="card-media">
+            <iframe src="https://raw.githubusercontent.com/Victoriaetch/competencias/289924dc2610a58d368ed0d688d29cb34552439e/Dise%C3%B1o/Cad/piston%20Victoria%20Etcheverry%20%281%29.pdf"
+            height="400px"></iframe>
+        </div>
         <div class="card-content">
             <div class="card-type">PDF</div>
             <h3>Pistón</h3>
-            <a href="https://github.com/Victoriaetch/competencias/blob/289924dc2610a58d368ed0d688d29cb34552439e/Dise%C3%B1o/Cad/piston%20Victoria%20Etcheverry%20%281%29.pdf" target="_blank">
-                Abrir PDF
-            </a>
+            <p>Modelo CAD del pistón.</p>
         </div>
     </div>
 
 </section>
 
 <div class="back-wrap">
-    <a href="index.html" class="back-btn">Volver al portafolio</a>
+    <a href="index.html" class="back-btn">
+        Volver al portafolio
+    </a>
 </div>
 
 </body>
